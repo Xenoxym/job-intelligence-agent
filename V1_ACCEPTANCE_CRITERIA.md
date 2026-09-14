@@ -22,7 +22,7 @@
 
 | Check | Executed result |
 | --- | --- |
-| `pytest -q` | 36 passed; includes API restart persistence, scoring/non-rejection, source contracts, dedup/provenance, feedback and security |
+| `pytest -q` | 37 passed; includes API restart persistence, scoring/non-rejection, source contracts, dedup/provenance, feedback, word-boundary regressions and security |
 | `ruff check backend migrations scripts tests` | Passed |
 | `ruff format --check backend migrations scripts tests` | Passed, 22 Python files |
 | `npm run check`, `npm run format:check`, `npm run build` | Passed; TypeScript + Prettier + Vite production bundle |
@@ -42,5 +42,8 @@ Screenshots and persistence markers are in ignored `artifacts/`. Automated tests
 and do not rely on external job sites. External reads are documented smoke observations, not
 claims of exhaustive provider coverage. Native dependency deprecation warnings are non-failing.
 
-GitHub Actions is configured with equivalent commands; remote run status will be recorded after
-the initial push if repository authorization permits. Cloud deployment is not claimed complete.
+GitHub Actions run [34818075685](https://github.com/Xenoxym/job-intelligence-agent/actions/runs/34818075685)
+passed all three jobs: backend, frontend and full container/browser/restart stack. The subsequent
+responsibility-word-boundary regression is covered by the 37-test local suite and is revalidated
+on push through the same workflow. The optional ingestion script also verified a clean skip
+without deployment secrets. Cloud deployment is not claimed complete.

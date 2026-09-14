@@ -73,3 +73,17 @@ def test_dismiss_hides_from_shortlist_but_is_recoverable(client):
     assert client.get("/api/jobs?status=dismissed").json()["total"] == 1
     client.post("/api/jobs/1/status", json={"status": "saved"})
     assert client.get("/api/jobs").json()["total"] == 8
+
+
+def test_responsibility_clusters_do_not_match_word_fragments():
+    data = normalized(
+        Demo()
+        .fetch()
+        .jobs[0]
+        .model_copy(
+            update={"description": "Responsibilities\nUse array processing and leverage existing utilities."}
+        )
+    )
+    clusters = RuleAnalyzer().analyze(data)["responsibility_clusters"]
+    assert "distributed" not in clusters
+    assert "retrieval" not in clusters

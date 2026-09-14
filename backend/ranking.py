@@ -155,7 +155,14 @@ class RuleAnalyzer:
         ]
         responsibility_text = " ".join(responsibilities).lower()
         clusters = [
-            name for name, terms in CLUSTERS.items() if any(term in responsibility_text for term in terms)
+            name
+            for name, terms in CLUSTERS.items()
+            if any(
+                bool(re.search(r"(?<!\w)" + re.escape(term), responsibility_text))
+                if term in {"fine-tun", "finetun", "deploy"}
+                else contains(responsibility_text, term)
+                for term in terms
+            )
         ]
         return {
             "version": "rules-v1",
