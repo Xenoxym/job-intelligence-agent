@@ -42,8 +42,15 @@ Screenshots and persistence markers are in ignored `artifacts/`. Automated tests
 and do not rely on external job sites. External reads are documented smoke observations, not
 claims of exhaustive provider coverage. Native dependency deprecation warnings are non-failing.
 
-GitHub Actions run [34818075685](https://github.com/Xenoxym/job-intelligence-agent/actions/runs/34818075685)
-passed all three jobs: backend, frontend and full container/browser/restart stack. The subsequent
-responsibility-word-boundary regression is covered by the 37-test local suite and is revalidated
-on push through the same workflow. The optional ingestion script also verified a clean skip
-without deployment secrets. Cloud deployment is not claimed complete.
+Final implementation commit `081081279f536ab9470a7620bb0c60d00ef6c337` passed GitHub Actions
+run [34818328319](https://github.com/Xenoxym/job-intelligence-agent/actions/runs/34818328319):
+backend (37 tests, lint and migrations), frontend (type/format/build checks), and the full
+container/browser/restart stack all succeeded. This includes the responsibility-word-boundary
+regression. The initial implementation also passed run
+[34818075685](https://github.com/Xenoxym/job-intelligence-agent/actions/runs/34818075685).
+
+After the usage-limit interruption, final smoke output was recovered and confirmed successful:
+the end-to-end workflow and persistence checks both passed. The running local app was checked
+again: `/health` returned `ok`, with 208 jobs (200 real and 8 demo) and two demo feedback records.
+The optional ingestion script also verified a clean skip without deployment secrets.
+Only hosted deployment authorization remains outstanding; cloud deployment is not claimed complete.
