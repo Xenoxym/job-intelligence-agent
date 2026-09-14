@@ -1,0 +1,13 @@
+{
+  "name": "Chengqian Luo",
+  "education": ["M.S. Computer Engineering, New York University Tandon School of Engineering; GPA 3.93 / 4.00", "B.E. Electrical Engineering and Automation, Shanghai University"],
+  "skills": ["Python", "SQL", "AWS", "Amazon Bedrock", "RAG", "OpenSearch", "hybrid retrieval", "tool calling", "Lambda", "API Gateway", "PostgreSQL", "Twilio", "SendGrid", "automated testing", "GitHub Actions", "CloudWatch", "agent evaluation", "observability", "PyTorch", "Hugging Face", "PEFT", "LoRA", "QLoRA", "Qwen", "Ray", "DDP", "DeepSpeed", "MLflow", "MinIO", "vLLM", "ONNX Runtime", "TensorRT", "FastAPI", "Docker", "Kubernetes", "Prometheus", "Grafana"],
+  "evidence": [
+    {"category": "agentic_ai", "statement": "Productionized AWS-based agentic workflows with Amazon Bedrock Agents and Flows, backend-controlled tool execution and approval-gated workflows.", "skills": ["Python", "AWS", "Amazon Bedrock", "tool calling", "Lambda", "API Gateway", "PostgreSQL", "Twilio", "SendGrid"]},
+    {"category": "retrieval", "statement": "Built RAG and hybrid retrieval with Amazon OpenSearch; evaluated retrieval quality, schema-valid intake and tool trajectories.", "skills": ["RAG", "OpenSearch", "hybrid retrieval", "agent evaluation"]},
+    {"category": "production", "statement": "Implemented automated testing, evaluation and monitoring pipelines, GitHub Actions and production observability with CloudWatch.", "skills": ["automated testing", "GitHub Actions", "observability", "CloudWatch", "FastAPI", "Docker", "Prometheus", "Grafana"]},
+    {"category": "training", "statement": "Worked on Qwen multimodal datasets, training and evaluation using PyTorch, Hugging Face Transformers / PEFT and LoRA / QLoRA.", "skills": ["PyTorch", "Hugging Face", "PEFT", "LoRA", "QLoRA", "Qwen"]},
+    {"category": "distributed", "statement": "Performed distributed A100 multi-GPU training with Ray Train / Tune and PyTorch DDP, including DeepSpeed ZeRO-3 comparison and MLflow / MinIO.", "skills": ["Ray", "PyTorch", "DDP", "DeepSpeed", "MLflow", "MinIO", "Kubernetes"]},
+    {"category": "inference", "statement": "Worked on inference latency and throughput optimization using vLLM, ONNX Runtime and TensorRT.", "skills": ["vLLM", "ONNX Runtime", "TensorRT"]}
+  ]
+}
